@@ -1,17 +1,25 @@
-const Home = () => {
-  const handleClick = (e) => {
-    console.log("Hello ninja", e);
-  };
+import { useState } from "react";
 
-  const handleClickAgain = (name, e) => {
-    console.log("Hello " + name, " ", e.target);
+const Home = () => {
+  // let name = "mario";
+  const [name, setName] = useState("Mario");
+  const [age, setAge] = useState(25);
+
+  const handleClick = () => {
+    // name = "Yos";
+    // console.log(name);
+    // change name but no re-render component
+    setName("lugi");
+    setAge(30);
   };
 
   return (
     <div className="home">
       <h2>Homepage</h2>
+      <p>
+        Name: {name} - Age: {age}
+      </p>
       <button onClick={handleClick}>Click me</button>
-      <button onClick={(e) => handleClickAgain("Yos", e)}>Click Yos</button>
     </div>
   );
 };
