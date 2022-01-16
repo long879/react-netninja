@@ -33,9 +33,7 @@ const Home = () => {
 
   useEffect(() => {
     console.log("useEffect ran");
-    // console.log(blogs);
-    console.log(name);
-  }, [name]);
+  }, []);
 
   return (
     <div className="home">
