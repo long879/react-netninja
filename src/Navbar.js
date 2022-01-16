@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-// có lỗi nếu khi click nhanh vào "Home" và vào "New Blog"
+// fix lỗi nếu khi click nhanh vào "Home" và vào "New Blog"
 
 function Navbar() {
   return (
