@@ -4,17 +4,22 @@ import BlogList from "./BlogList";
 const Home = () => {
   // terminal: npx json-server --watch data/db.json --port 8000
   const [blogs, setBlogs] = useState();
+  const [isPending, setIsPending] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:8000/blogs")
-      .then((res) => res.json())
-      .then((data) => {
-        setBlogs(data);
-      });
+    setTimeout(() => {
+      fetch("http://localhost:8000/blogs")
+        .then((res) => res.json())
+        .then((data) => {
+          setBlogs(data);
+          setIsPending(false);
+        });
+    }, 1000);
   }, []);
 
   return (
     <div className="home">
+      {isPending && <div>Loading...</div>}
       {blogs && <BlogList blogs={blogs} title="All Blogs" />}
     </div>
   );
