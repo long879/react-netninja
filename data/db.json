@@ -17,6 +17,12 @@
       "body": "Tran Thanh Long",
       "author": "yos",
       "id": 3
+    },
+    {
+      "title": "long",
+      "body": "Long test useNavigate from react-router-dom",
+      "author": "yos",
+      "id": 4
     }
   ]
 }
